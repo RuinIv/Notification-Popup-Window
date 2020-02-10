@@ -286,8 +286,8 @@ namespace Tulpep.NotificationWindow
             rcBody = new Rectangle(0, 0, this.Width, this.Height);
             rcHeader = new Rectangle(0, 0, this.Width, Parent.HeaderHeight);
             rcForm = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
-
-            brushBody = new LinearGradientBrush(rcBody, Parent.BodyColor, GetLighterColor(Parent.BodyColor), LinearGradientMode.Vertical);
+            var bodyGradient = Parent.UseDarkBodyGradient ? GetDarkerColor(Parent.BodyColor) : GetLighterColor(Parent.BodyColor);
+            brushBody = new LinearGradientBrush(rcBody, Parent.BodyColor, bodyGradient, Parent.GradientMode);
             brushHeader = new LinearGradientBrush(rcHeader, Parent.HeaderColor, GetDarkerColor(Parent.HeaderColor), LinearGradientMode.Vertical);
             brushButtonHover = new SolidBrush(Parent.ButtonHoverColor);
             penButtonBorder = new Pen(Parent.ButtonBorderColor);

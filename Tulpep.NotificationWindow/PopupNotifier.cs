@@ -96,6 +96,12 @@ namespace Tulpep.NotificationWindow
         [Description("Gradient of window background color.")]
         public int GradientPower { get; set; }
 
+        [Category("Appearance")]
+        public bool UseDarkBodyGradient { get; set; }
+
+        [Category("Appearance"), DefaultValue(System.Drawing.Drawing2D.LinearGradientMode.Vertical)]
+        public System.Drawing.Drawing2D.LinearGradientMode GradientMode { get; set; }
+
         [Category("Content")]
         [Description("Font of the content text.")]
         public Font ContentFont { get; set; }
